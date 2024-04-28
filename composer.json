@@ -1,0 +1,11 @@
+{
+  "autoload": {
+    "psr-4": {
+      "S_Sait\\":"vendor\\S_Sait",
+      "app\\": "app"
+    }
+  },
+  "require": {
+    "gabordemooij/redbean": "dev-master"
+  }
+}
