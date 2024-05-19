@@ -13,6 +13,7 @@ class Router
     public static function add($regexp, $route = []) // Принимает маршруты
     {
         self::$routes[$regexp] = $route;
+
     }
 
     public static function getRoutes(): array // будет возвращать наши маршруты
@@ -38,8 +39,11 @@ class Router
 
     public static function dispatch($url)
     {
+        $url = self::removeQueryString($url); // будет отсекать строку запроса
         if (self::matchRoute($url)) {
-            $url = self::removeQueryString($url); // будет отсекать строку запроса
+            if (!empty(self::$route['lang'])){
+                App::$app->setProperty('lang', self::$route['lang']);
+            }
             $controller = 'app\controllers\\' . self::$route['admin_prefix'] . self::$route['controller'] . 'Controller';
             //если есть контроллер мы созданим экземпляр класса
             if (class_exists($controller)) {

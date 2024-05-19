@@ -3,5 +3,6 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/app/controllers/MainController.php" dialect="MariaDB" />
     <file url="file://$PROJECT_DIR$/app/models/Main.php" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/app/widgets/Language/Language.php" dialect="MariaDB" />
   </component>
 </project>

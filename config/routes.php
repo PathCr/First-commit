@@ -14,10 +14,9 @@ Router::add('^admin/?$',
 Router::add('^admin/(?P<controller>[a-z-]+)/?(?P<action>[a-z-]+)?$',
     ['admin_prefix' => 'admin']);
 
-Router::add('^product/(?P<slug>[A-z0-9-]+)/?$', ['controller' => 'Product', 'action' => 'view']);
+Router::add('^(?P<lang>[a-z]+)?/?product/(?P<slug>[A-z0-9-]+)/?$', ['controller' => 'Product', 'action' => 'view']);
 
-//Router::add('^public$', ['controller' => 'Main', 'action' => 'index']); // 1 правило маршрутизатора
-Router::add('^$', ['controller' => 'Main', 'action' => 'index']); // 1 правило маршрутизатора
+Router::add('^(?P<lang>[a-z]+)?/?$', ['controller' => 'Main', 'action' => 'index']); // 1 правило маршрутизатора
 
 Router::add('^(?P<controller>[a-z-]+)/(?P<action>[a-z-]+)/?$'); // 2 правило маршрутизатора
 
